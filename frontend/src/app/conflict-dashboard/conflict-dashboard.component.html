@@ -1,0 +1,44 @@
+<section>
+  <div class="toolbar">
+    <div>
+      <h1>Conflict Resolution</h1>
+      <p class="muted">Resolved pass overlaps by station, priority, elevation, duration, and satellite type.</p>
+    </div>
+  </div>
+
+  <div class="stat-row" *ngIf="stats">
+    <div class="metric"><strong>{{ stats.conflicts_detected }}</strong><span>Total conflicts today</span></div>
+    <div class="metric"><strong>{{ stats.conflicts_resolved }}</strong><span>Auto-resolved</span></div>
+    <div class="metric"><strong>{{ 100 - stats.resolution_rate_percent | number:'1.0-1' }}%</strong><span>Pending manual review</span></div>
+    <div class="metric"><strong>{{ stats.resolution_rate_percent | number:'1.0-1' }}%</strong><span>Resolution rate</span></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Station</th>
+          <th>Satellite A Winner</th>
+          <th>Satellite B Loser</th>
+          <th>Reason</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conflict of conflicts">
+          <td>{{ conflict.resolved_at | date:'short' }}</td>
+          <td>{{ conflict.ground_station }}</td>
+          <td>{{ conflict.winner_satellite }}</td>
+          <td>{{ conflict.loser_satellite }}</td>
+          <td>
+            <strong>{{ conflict.conflict_reason }}</strong>
+            <p>{{ conflict.resolution_reason }}</p>
+            <small *ngIf="conflict.alternative_window">Alternative: {{ conflict.alternative_window }}</small>
+          </td>
+          <td><button (click)="rerun(conflict)" [disabled]="resolvingId === conflict.id">Re-resolve</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

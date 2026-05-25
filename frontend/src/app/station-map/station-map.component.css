@@ -1,0 +1,16 @@
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+}
+
+#station-map {
+  height: calc(100svh - 150px);
+  min-height: 520px;
+  border: 1px solid var(--line);
+  background: #10151b;
+}
+
+:host ::ng-deep .leaflet-container {
+  background: #10151b;
+  font: inherit;
+}

@@ -1,0 +1,50 @@
+<section class="timeline-shell">
+  <div class="toolbar">
+    <div>
+      <h1>Live Pass Timeline</h1>
+      <p class="muted">Next 24 hours, auto-refreshing every 60 seconds.</p>
+    </div>
+    <div class="legend">
+      <span><i class="scheduled"></i> Scheduled</span>
+      <span><i class="conflict"></i> Conflict</span>
+      <span><i class="deprioritized"></i> Deprioritized</span>
+    </div>
+  </div>
+
+  <div class="timeline-grid">
+    <aside class="stations">
+      <div class="station-label" *ngFor="let station of stations()">{{ station }}</div>
+    </aside>
+    <div class="tracks">
+      <div class="hour-rule">
+        <span *ngFor="let hour of [0,4,8,12,16,20,24]">{{ hour }}h</span>
+      </div>
+      <div class="track" *ngFor="let station of stations()">
+        <button
+          *ngFor="let pass of passesForStation(station)"
+          class="pass-bar"
+          [ngClass]="pass.status"
+          [style.left.%]="left(pass)"
+          [style.width.%]="width(pass)"
+          (click)="selected = pass"
+          [title]="pass.satellite_name">
+          {{ pass.satellite_name }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="detail-panel" *ngIf="selected">
+    <button class="close" (click)="selected = null">Close</button>
+    <h2>{{ selected.satellite_name }}</h2>
+    <dl>
+      <div><dt>Ground station</dt><dd>{{ selected.ground_station_name }}</dd></div>
+      <div><dt>AOS</dt><dd>{{ selected.aos_time | date:'medium' }}</dd></div>
+      <div><dt>LOS</dt><dd>{{ selected.los_time | date:'medium' }}</dd></div>
+      <div><dt>Max elevation</dt><dd>{{ selected.max_elevation_deg | number:'1.1-1' }} deg</dd></div>
+      <div><dt>Duration</dt><dd>{{ selected.duration_seconds / 60 | number:'1.0-1' }} min</dd></div>
+      <div><dt>Priority</dt><dd>{{ selected.mission_priority }} / 10</dd></div>
+      <div><dt>Status</dt><dd>{{ selected.status }}</dd></div>
+    </dl>
+  </aside>
+</section>
