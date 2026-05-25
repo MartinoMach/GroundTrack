@@ -1,0 +1,57 @@
+<svg width="760" height="240" viewBox="0 0 760 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GroundTrack logo</title>
+  <desc id="desc">A clean black, green, and purple GroundTrack wordmark with an orbital ground-station badge.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="760" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020204"/>
+      <stop offset="0.55" stop-color="#0B0618"/>
+      <stop offset="1" stop-color="#03140C"/>
+    </linearGradient>
+    <radialGradient id="badge-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(182 120) rotate(90) scale(104)">
+      <stop stop-color="#22C55E" stop-opacity="0.42"/>
+      <stop offset="0.56" stop-color="#7C3AED" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#020204" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="82" y1="45" x2="278" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="0.45" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="word" x1="322" y1="83" x2="636" y2="132" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="0.5" stop-color="#DCFCE7"/>
+      <stop offset="1" stop-color="#E9D5FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="760" height="240" rx="30" fill="url(#bg)"/>
+  <circle cx="182" cy="120" r="111" fill="url(#badge-glow)"/>
+
+  <g opacity="0.72">
+    <circle cx="62" cy="47" r="1.8" fill="#E9D5FF"/>
+    <circle cx="116" cy="190" r="1.5" fill="#86EFAC"/>
+    <circle cx="332" cy="38" r="1.6" fill="#C4B5FD"/>
+    <circle cx="604" cy="51" r="1.9" fill="#DCFCE7"/>
+    <circle cx="699" cy="176" r="1.5" fill="#A78BFA"/>
+    <path d="M682 86L685 93L692 96L685 99L682 106L679 99L672 96L679 93L682 86Z" fill="#86EFAC"/>
+  </g>
+
+  <g transform="translate(182 120)">
+    <circle r="63" fill="#05070D" stroke="#1F2937" stroke-width="2"/>
+    <path d="M-72 16C-37-48 43-64 88-18" stroke="url(#ring)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M-88 24C-44 80 39 82 80 27" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+    <circle cx="84" cy="-21" r="9" fill="#22C55E"/>
+    <circle cx="84" cy="-21" r="16" stroke="#22C55E" stroke-width="2" opacity="0.28"/>
+    <path d="M-19 41L0 4L19 41H-19Z" fill="#F8FAFC"/>
+    <path d="M0 6V-33" stroke="#F8FAFC" stroke-width="6" stroke-linecap="round"/>
+    <path d="M-27-21C-14-36 14-36 27-21" stroke="#22C55E" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-43-42C-21-66 21-66 43-42" stroke="#A78BFA" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M-12 54H12" stroke="#22C55E" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <text x="474" y="116" text-anchor="middle" fill="url(#word)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="850" letter-spacing="0">GroundTrack</text>
+    <path d="M365 144H583" stroke="#22C55E" stroke-width="5" stroke-linecap="round"/>
+    <path d="M405 160H543" stroke="#7C3AED" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
